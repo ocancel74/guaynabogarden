@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guaynabo Garden Supply - Tu Centro de Jardinería</title>
+    <title>Guaynabo Garden Supply - Equipos de Jardinería</title>
     <style>
         * {
             margin: 0;
@@ -12,13 +12,13 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
             line-height: 1.6;
             color: #333;
             background-color: #f8f9fa;
         }
 
-        /* Modern Header */
+        /* Header moderno */
         header {
             background: linear-gradient(135deg, #1a1a1a 0%, #2b2b2b 100%);
             color: white;
@@ -27,7 +27,6 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            backdrop-filter: blur(10px);
         }
 
         .header-content {
@@ -37,6 +36,8 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
         }
 
         .logo-container {
@@ -46,14 +47,13 @@
         }
 
         .logo-container img {
-            height: 60px;
+            height: 50px;
             width: auto;
         }
 
         .logo-text h1 {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 700;
-            letter-spacing: -0.5px;
         }
 
         .logo-text h1 .g-letter {
@@ -61,25 +61,21 @@
         }
 
         .logo-text p {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: #ff6b35;
             margin-top: 0.2rem;
-            font-weight: 500;
         }
 
         .header-contact {
             display: flex;
             gap: 1.5rem;
-            align-items: center;
+            flex-wrap: wrap;
         }
 
         .header-contact a {
             color: white;
             text-decoration: none;
             font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
             transition: color 0.3s;
         }
 
@@ -87,14 +83,10 @@
             color: #9cc41e;
         }
 
-        /* Modern Navigation */
+        /* Navegación */
         nav {
             background-color: white;
-            padding: 0;
             box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-            position: sticky;
-            top: 96px;
-            z-index: 99;
         }
 
         .nav-container {
@@ -102,7 +94,8 @@
             margin: 0 auto;
             display: flex;
             justify-content: center;
-            padding: 0 2rem;
+            flex-wrap: wrap;
+            padding: 0 1rem;
         }
 
         nav a {
@@ -112,7 +105,6 @@
             display: inline-block;
             transition: all 0.3s;
             font-weight: 500;
-            font-size: 0.95rem;
             position: relative;
         }
 
@@ -142,66 +134,39 @@
             padding: 2rem;
         }
 
-        /* Modern Hero Section */
+        /* Hero section */
         .hero {
-            background: linear-gradient(135deg, rgba(26, 26, 26, 0.97), rgba(43, 43, 43, 0.95)),
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%232b2b2b" width="1200" height="400"/></svg>');
-            background-size: cover;
-            background-position: center;
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.97), rgba(43, 43, 43, 0.95));
             color: white;
-            padding: 5rem 3rem;
+            padding: 4rem 2rem;
             text-align: center;
             margin: 2rem 0 3rem 0;
             border-radius: 20px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.15);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 50%, rgba(156, 196, 30, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 50%, rgba(255, 107, 53, 0.1) 0%, transparent 50%);
-            pointer-events: none;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
         }
 
         .hero h2 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             margin-bottom: 1rem;
-            background: linear-gradient(135deg, #9cc41e 0%, #7da016 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #9cc41e;
             font-weight: 800;
-            letter-spacing: -1px;
         }
 
         .hero p {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             max-width: 700px;
             margin: 0 auto;
             opacity: 0.95;
-            font-weight: 300;
         }
 
+        /* Secciones */
         .section {
             margin-bottom: 4rem;
         }
 
         .section h2 {
             color: #1a1a1a;
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             margin-bottom: 0.5rem;
             font-weight: 700;
             position: relative;
@@ -221,54 +186,37 @@
 
         .section-subtitle {
             color: #666;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             margin-top: 1.5rem;
             margin-bottom: 2rem;
+            line-height: 1.8;
         }
 
-        /* Modern Service Cards */
+        /* Grid de servicios */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
 
         .service-card {
             background: white;
-            padding: 2.5rem;
+            padding: 2rem;
             border-radius: 16px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 2px solid transparent;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 0;
-            background: linear-gradient(180deg, #9cc41e 0%, #ff6b35 100%);
-            transition: height 0.4s;
-        }
-
-        .service-card:hover::before {
-            height: 100%;
+            transition: all 0.3s;
+            border-left: 4px solid #9cc41e;
         }
 
         .service-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 12px 40px rgba(156, 196, 30, 0.15);
-            border-color: #9cc41e;
         }
 
         .service-card h3 {
             color: #1a1a1a;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             margin-bottom: 1rem;
             font-weight: 600;
         }
@@ -276,50 +224,28 @@
         .service-card p {
             color: #666;
             line-height: 1.8;
-            font-size: 0.95rem;
         }
 
         .icon {
-            font-size: 3rem;
+            font-size: 2.5rem;
             margin-bottom: 1rem;
-            filter: grayscale(20%);
         }
 
-        /* Modern CTA Section */
+        /* CTA Section */
         .cta-section {
             background: linear-gradient(135deg, #1a1a1a 0%, #2b2b2b 100%);
             color: white;
-            padding: 4rem 3rem;
+            padding: 4rem 2rem;
             text-align: center;
             border-radius: 20px;
             margin: 4rem 0;
             box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(156, 196, 30, 0.1) 0%, transparent 70%);
-            animation: pulse 8s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.5; }
-            50% { transform: scale(1.1); opacity: 0.8; }
         }
 
         .cta-section h2 {
             color: white;
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             margin-bottom: 1rem;
-            position: relative;
-            z-index: 1;
         }
 
         .cta-section h2::after {
@@ -327,16 +253,14 @@
         }
 
         .cta-section p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin-bottom: 2rem;
-            position: relative;
-            z-index: 1;
         }
 
         .cta-button {
             background: linear-gradient(135deg, #9cc41e 0%, #7da016 100%);
             color: white;
-            padding: 1.2rem 3rem;
+            padding: 1rem 2.5rem;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 600;
@@ -344,8 +268,6 @@
             display: inline-block;
             transition: all 0.3s;
             box-shadow: 0 6px 25px rgba(156, 196, 30, 0.4);
-            position: relative;
-            z-index: 1;
         }
 
         .cta-button:hover {
@@ -354,10 +276,10 @@
             background: linear-gradient(135deg, #ff6b35 0%, #ff5520 100%);
         }
 
-        /* Modern Contact Section */
+        /* Contacto */
         .contact-info {
             background: white;
-            padding: 3rem;
+            padding: 2.5rem;
             border-radius: 20px;
             margin-top: 2rem;
             box-shadow: 0 4px 20px rgba(0,0,0,0.06);
@@ -365,17 +287,15 @@
         }
 
         .contact-info p {
-            font-size: 1.1rem;
-            margin: 1.5rem 0;
+            font-size: 1.05rem;
+            margin: 1.2rem 0;
             color: #555;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
         }
 
         .contact-info strong {
             color: #1a1a1a;
-            min-width: 120px;
+            min-width: 100px;
+            display: inline-block;
         }
 
         .contact-info a {
@@ -393,7 +313,7 @@
             display: flex;
             justify-content: center;
             gap: 2rem;
-            margin-top: 3rem;
+            margin-top: 2rem;
             padding: 2rem;
             background: #f8f9fa;
             border-radius: 15px;
@@ -408,19 +328,18 @@
             transform: translateY(-5px);
         }
 
-        /* Modern Footer */
+        /* Footer */
         footer {
             background: linear-gradient(135deg, #1a1a1a 0%, #2b2b2b 100%);
             color: white;
             text-align: center;
-            padding: 3rem 2rem;
+            padding: 2.5rem 2rem;
             margin-top: 4rem;
             border-top: 4px solid #9cc41e;
         }
 
         footer p {
             margin: 0.5rem 0;
-            font-size: 0.95rem;
         }
 
         footer p:last-child {
@@ -429,7 +348,7 @@
             margin-top: 1rem;
         }
 
-        /* Floating WhatsApp Button */
+        /* Botón flotante WhatsApp */
         .whatsapp-float {
             position: fixed;
             width: 60px;
@@ -454,11 +373,10 @@
             box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
         }
 
-        /* Responsive Design */
+        /* Responsive */
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
-                gap: 1rem;
                 text-align: center;
             }
 
@@ -468,37 +386,23 @@
             }
 
             .logo-container img {
-                height: 50px;
+                height: 45px;
             }
 
             .hero h2 {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
 
             .hero p {
-                font-size: 1.1rem;
+                font-size: 1rem;
             }
 
-            nav {
-                top: auto;
-            }
-
-            .nav-container {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            nav a {
-                padding: 0.8rem 1rem;
-                font-size: 0.9rem;
+            .section h2 {
+                font-size: 1.8rem;
             }
 
             .services-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .section h2 {
-                font-size: 2rem;
             }
 
             .whatsapp-float {
@@ -507,11 +411,6 @@
                 bottom: 20px;
                 right: 20px;
             }
-
-            .contact-info p {
-                flex-direction: column;
-                align-items: flex-start;
-            }
         }
     </style>
 </head>
@@ -519,7 +418,7 @@
     <header>
         <div class="header-content">
             <div class="logo-container">
-                <img src="logo.jpg" alt="Guaynabo Garden Supply Logo" onerror="this.style.display='none';">
+                <img src="logo.jpg" alt="Guaynabo Garden Supply" onerror="this.style.display='none';">
                 <div class="logo-text">
                     <h1><span class="g-letter">G</span>uaynabo Garden Supply</h1>
                     <p>Equipos • Reparación • Piezas</p>
@@ -543,10 +442,8 @@
 
     <div class="container">
         <div class="hero">
-            <div class="hero-content">
-                <h2>Especialistas en Equipos de Jardinería</h2>
-                <p>Venta de trimmers, cortadoras de grama y todo tipo de equipos. Servicio de reparación profesional y piezas originales</p>
-            </div>
+            <h2>Especialistas en Equipos de Jardinería</h2>
+            <p>Venta de trimmers, cortadoras de grama y todo tipo de equipos. Servicio de reparación profesional y piezas originales</p>
         </div>
 
         <section id="servicios" class="section">
@@ -616,14 +513,14 @@
                 
                 <div class="social-icons">
                     <a href="https://www.facebook.com/people/Guaynabo-Garden-Supply/100073427902351/" target="_blank">
-                        <svg width="50" height="50" viewBox="0 0 24 24" fill="#1877f2" style="transition: transform 0.3s;">
+                        <svg width="50" height="50" viewBox="0 0 24 24" fill="#1877f2">
                             <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                         </svg>
                         <div style="color: #1877f2; font-weight: 600; margin-top: 8px; font-size: 0.9rem;">Facebook</div>
                     </a>
                     
                     <a href="https://wa.me/17878065262" target="_blank">
-                        <svg width="50" height="50" viewBox="0 0 24 24" fill="#25D366" style="transition: transform 0.3s;">
+                        <svg width="50" height="50" viewBox="0 0 24 24" fill="#25D366">
                             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
                         </svg>
                         <div style="color: #25D366; font-weight: 600; margin-top: 8px; font-size: 0.9rem;">WhatsApp</div>
@@ -642,402 +539,8 @@
         <p>Equipos, Reparación y Piezas de Jardinería en Guaynabo</p>
     </footer>
 
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/17878065262?text=Hola,%20me%20gustaría%20información%20sobre%20sus%20servicios" class="whatsapp-float" target="_blank" title="Chatea con nosotros en WhatsApp">
-        <svg width="35" height="35" viewBox="0 0 24 24" fill="white">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-        </svg>
-    </a>
-</body>
-</html>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f5f5f5;
-        }
-
-        header {
-            background: linear-gradient(135deg, #2b2b2b 0%, #1a1a1a 100%);
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        header p {
-            font-size: 1.2rem;
-            opacity: 0.95;
-        }
-
-        nav {
-            background-color: #2b2b2b;
-            padding: 1rem 0;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            border-top: 3px solid #9cc41e;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 0.5rem 1.5rem;
-            margin: 0 0.5rem;
-            display: inline-block;
-            transition: all 0.3s;
-            border-radius: 5px;
-        }
-
-        nav a:hover {
-            background-color: #9cc41e;
-            color: #2b2b2b;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        .hero {
-            background: linear-gradient(135deg, rgba(43, 43, 43, 0.95), rgba(26, 26, 26, 0.95)),
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%232b2b2b" width="1200" height="400"/><circle fill="%239cc41e" cx="100" cy="100" r="50" opacity="0.2"/><circle fill="%23ff6b35" cx="300" cy="200" r="70" opacity="0.2"/><circle fill="%239cc41e" cx="900" cy="150" r="60" opacity="0.2"/><circle fill="%23ff6b35" cx="1100" cy="250" r="80" opacity="0.2"/></svg>');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 4rem 2rem;
-            text-align: center;
-            margin-bottom: 3rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-        }
-
-        .hero h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: #9cc41e;
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .section {
-            margin-bottom: 3rem;
-        }
-
-        .section h2 {
-            color: #2b2b2b;
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            border-bottom: 3px solid #ff6b35;
-            padding-bottom: 0.5rem;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .service-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-            border-left: 4px solid #9cc41e;
-            border-top: 1px solid #f0f0f0;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 20px rgba(156, 196, 30, 0.3);
-            border-left-color: #ff6b35;
-        }
-
-        .service-card h3 {
-            color: #2b2b2b;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .service-card p {
-            color: #666;
-            line-height: 1.8;
-        }
-
-        .icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .cta-section {
-            background: linear-gradient(135deg, #2b2b2b 0%, #1a1a1a 100%);
-            color: white;
-            padding: 3rem;
-            text-align: center;
-            border-radius: 10px;
-            margin: 3rem 0;
-            border: 3px solid #9cc41e;
-        }
-
-        .cta-section h2 {
-            color: #9cc41e;
-            border: none;
-            margin-bottom: 1rem;
-        }
-
-        .cta-button {
-            background: linear-gradient(135deg, #9cc41e 0%, #8ab51a 100%);
-            color: #2b2b2b;
-            padding: 1rem 2.5rem;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            display: inline-block;
-            margin-top: 1rem;
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 4px 15px rgba(156, 196, 30, 0.4);
-        }
-
-        .cta-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(156, 196, 30, 0.6);
-            background: linear-gradient(135deg, #ff6b35 0%, #ff5520 100%);
-            color: white;
-        }
-
-        .contact-info {
-            background-color: #f9f9f9;
-            padding: 2rem;
-            border-radius: 10px;
-            margin-top: 2rem;
-            border-left: 5px solid #ff6b35;
-        }
-
-        .contact-info p {
-            font-size: 1.1rem;
-            margin: 1rem 0;
-            color: #555;
-        }
-
-        .contact-info strong {
-            color: #2b2b2b;
-        }
-
-        footer {
-            background: linear-gradient(135deg, #2b2b2b 0%, #1a1a1a 100%);
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-            margin-top: 3rem;
-            border-top: 4px solid #9cc41e;
-        }
-
-        footer p {
-            margin: 0.5rem 0;
-        }
-
-        footer p:last-child {
-            color: #ff6b35;
-            font-weight: 500;
-        }
-
-        /* Floating WhatsApp Button */
-        .whatsapp-float {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 40px;
-            right: 40px;
-            background-color: #25D366;
-            color: white;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
-            text-decoration: none;
-        }
-
-        .whatsapp-float:hover {
-            background-color: #128C7E;
-            transform: scale(1.1);
-            box-shadow: 2px 2px 15px rgba(37, 211, 102, 0.5);
-        }
-
-        @media screen and (max-width: 768px) {
-            .whatsapp-float {
-                width: 50px;
-                height: 50px;
-                bottom: 20px;
-                right: 20px;
-                font-size: 25px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2rem;
-            }
-
-            .hero h2 {
-                font-size: 1.8rem;
-            }
-
-            nav a {
-                display: block;
-                margin: 0.5rem 0;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <div style="background-color: rgba(255, 255, 255, 0.1); padding: 20px; border-radius: 15px; display: inline-block; margin-bottom: 1rem;">
-            <img src="logo.jpg" alt="Guaynabo Garden Supply Logo" style="max-width: 350px; height: auto; display: block;" onerror="this.style.display='none'; document.getElementById('text-logo').style.display='block';">
-        </div>
-        <div id="text-logo" style="display: none; margin-bottom: 1rem;">
-            <h1 style="font-size: 3rem; margin: 0; letter-spacing: 2px;">
-                <span style="color: #9cc41e; font-weight: 900;">G</span><span style="color: white;">uaynabo</span>
-            </h1>
-            <h2 style="font-size: 2rem; margin: 0; color: #ff6b35; font-weight: 600;">Garden Supply</h2>
-        </div>
-        <p style="font-size: 1.2rem; margin-top: 1rem;">Equipos de Jardinería | Reparación | Piezas y Accesorios</p>
-    </header>
-
-    <nav>
-        <a href="#servicios">Servicios</a>
-        <a href="#productos">Productos</a>
-        <a href="#nosotros">Nosotros</a>
-        <a href="#contacto">Contacto</a>
-    </nav>
-
-    <div class="container">
-        <div class="hero">
-            <h2>Especialistas en Equipos de Jardinería</h2>
-            <p>Venta de trimmers, cortadoras de grama, y todo tipo de equipos. Servicio de reparación y piezas originales</p>
-        </div>
-
-        <section id="servicios" class="section">
-            <h2>Nuestros Servicios</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="icon">🔧</div>
-                    <h3>Reparación de Equipos</h3>
-                    <p>Servicio técnico especializado para trimmers, cortadoras de grama, sopladores y otros equipos de jardinería. Diagnóstico y reparación profesional.</p>
-                </div>
-                <div class="service-card">
-                    <div class="icon">⚙️</div>
-                    <h3>Piezas Originales</h3>
-                    <p>Amplio inventario de repuestos y piezas originales para todas las marcas: cuchillas, cuerdas, filtros, carburadores y más.</p>
-                </div>
-                <div class="service-card">
-                    <div class="icon">✂️</div>
-                    <h3>Trimmers</h3>
-                    <p>Venta de trimmers de gasolina y eléctricos de las mejores marcas. Modelos profesionales y para uso residencial.</p>
-                </div>
-                <div class="service-card">
-                    <div class="icon">🚜</div>
-                    <h3>Cortadoras de Grama</h3>
-                    <p>Cortadoras push y autopropulsadas, a gasolina y eléctricas. Equipos duraderos para todo tipo de terreno.</p>
-                </div>
-                <div class="service-card">
-                    <div class="icon">💨</div>
-                    <h3>Sopladores y Más</h3>
-                    <p>Sopladores de hojas, motosierras, bordeadoras y todo el equipo necesario para mantenimiento de jardines.</p>
-                </div>
-                <div class="service-card">
-                    <div class="icon">🔍</div>
-                    <h3>Mantenimiento</h3>
-                    <p>Servicio de mantenimiento preventivo para prolongar la vida útil de tus equipos. Cambio de aceite, limpieza y ajustes.</p>
-                </div>
-            </div>
-        </section>
-
-        <div class="cta-section">
-            <h2>¿Tu Equipo Necesita Reparación?</h2>
-            <p>Traélo y nuestros técnicos lo revisarán. También tenemos equipos nuevos y piezas en stock</p>
-            <a href="#contacto" class="cta-button">Contáctanos Ahora</a>
-        </div>
-
-        <section id="productos" class="section">
-            <h2>Productos y Equipos</h2>
-            <p style="font-size: 1.1rem; color: #555; line-height: 1.8;">
-                En Guaynabo Garden Supply nos especializamos en la venta de equipos de jardinería profesionales y residenciales. Contamos con trimmers de gasolina y eléctricos, cortadoras de grama de diferentes tamaños y potencias, sopladores de hojas, motosierras, bordeadoras y mucho más. Además, mantenemos un amplio inventario de <strong>piezas y repuestos originales</strong> para todas las marcas: cuchillas, cuerdas de nylon, filtros de aire, bujías, carburadores, tanques, y cualquier pieza que necesites para mantener tu equipo funcionando perfectamente.
-            </p>
-        </section>
-
-        <section id="nosotros" class="section">
-            <h2>Sobre Nosotros</h2>
-            <p style="font-size: 1.1rem; color: #555; line-height: 1.8;">
-                Guaynabo Garden Supply es tu taller especializado en equipos de jardinería en el área de Guaynabo. Nos dedicamos a la <strong>venta de equipos nuevos</strong>, <strong>reparación técnica profesional</strong> y <strong>suministro de piezas originales</strong> para todo tipo de maquinaria de jardinería. Nuestro equipo técnico cuenta con la experiencia necesaria para diagnosticar y reparar trimmers, cortadoras de grama, sopladores y otros equipos, devolviéndolos a su óptimo funcionamiento. Ya sea que necesites comprar un equipo nuevo, reparar el que tienes, o conseguir esa pieza específica que buscas, estamos aquí para ayudarte.
-            </p>
-        </section>
-
-        <section id="contacto" class="section">
-            <h2>Contacto</h2>
-            <div class="contact-info">
-                <p><strong>📍 Dirección:</strong> <a href="https://maps.app.goo.gl/esMGebgLEf5G48Ns9" target="_blank" style="color: #9cc41e; text-decoration: none; font-weight: bold;">Carr 169 Km 1.4 Bo Camarones, Guaynabo, PR 00969</a></p>
-                <p><strong>📞 Teléfono:</strong> <a href="tel:+17878065262" style="color: #9cc41e; text-decoration: none; font-weight: bold;">+1 (787) 806-5262</a></p>
-                <p><strong>✉️ Email:</strong> <a href="mailto:info@guaynabogarden.com" style="color: #ff6b35; text-decoration: none; font-weight: bold;">info@guaynabogarden.com</a></p>
-                <p><strong>⏰ Horario:</strong> Lunes a Sábado</p>
-                
-                <div style="margin-top: 2rem; text-align: center;">
-                    <a href="https://www.facebook.com/people/Guaynabo-Garden-Supply/100073427902351/" target="_blank" style="display: inline-block; margin: 0 15px; text-decoration: none;">
-                        <svg width="50" height="50" viewBox="0 0 24 24" fill="#1877f2" style="transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                        </svg>
-                        <div style="color: #1877f2; font-weight: bold; margin-top: 5px;">Facebook</div>
-                    </a>
-                    
-                    <a href="https://wa.me/17878065262" target="_blank" style="display: inline-block; margin: 0 15px; text-decoration: none;">
-                        <svg width="50" height="50" viewBox="0 0 24 24" fill="#25D366" style="transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-                        </svg>
-                        <div style="color: #25D366; font-weight: bold; margin-top: 5px;">WhatsApp</div>
-                    </a>
-                </div>
-                
-                <p style="margin-top: 2rem; font-style: italic; color: #666;">
-                    Traenos tu equipo para reparación o visítanos para ver nuestro inventario de equipos nuevos y piezas. ¡Estamos para servirte!
-                </p>
-            </div>
-        </section>
-    </div>
-
-    <footer>
-        <p>&copy; 2025 Guaynabo Garden Supply. Todos los derechos reservados.</p>
-        <p>Equipos, Reparación y Piezas de Jardinería en Guaynabo</p>
-    </footer>
-
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/17878065262?text=Hola,%20me%20gustaría%20información%20sobre%20sus%20servicios" class="whatsapp-float" target="_blank" title="Chatea con nosotros en WhatsApp">
+    <!-- Botón flotante WhatsApp -->
+    <a href="https://wa.me/17878065262?text=Hola,%20me%20gustaría%20información%20sobre%20sus%20servicios" class="whatsapp-float" target="_blank" title="Chatea con nosotros">
         <svg width="35" height="35" viewBox="0 0 24 24" fill="white">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
         </svg>
