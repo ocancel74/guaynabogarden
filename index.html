@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guaynabo Garden Supply - Tu Centro de Jardinería</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2b2b2b 0%, #1a1a1a 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+
+        nav {
+            background-color: #2b2b2b;
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            border-top: 3px solid #9cc41e;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1.5rem;
+            margin: 0 0.5rem;
+            display: inline-block;
+            transition: all 0.3s;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background-color: #9cc41e;
+            color: #2b2b2b;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, rgba(43, 43, 43, 0.95), rgba(26, 26, 26, 0.95)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%232b2b2b" width="1200" height="400"/><circle fill="%239cc41e" cx="100" cy="100" r="50" opacity="0.2"/><circle fill="%23ff6b35" cx="300" cy="200" r="70" opacity="0.2"/><circle fill="%239cc41e" cx="900" cy="150" r="60" opacity="0.2"/><circle fill="%23ff6b35" cx="1100" cy="250" r="80" opacity="0.2"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #9cc41e;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .section h2 {
+            color: #2b2b2b;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #ff6b35;
+            padding-bottom: 0.5rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-left: 4px solid #9cc41e;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(156, 196, 30, 0.3);
+            border-left-color: #ff6b35;
+        }
+
+        .service-card h3 {
+            color: #2b2b2b;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #2b2b2b 0%, #1a1a1a 100%);
+            color: white;
+            padding: 3rem;
+            text-align: center;
+            border-radius: 10px;
+            margin: 3rem 0;
+            border: 3px solid #9cc41e;
+        }
+
+        .cta-section h2 {
+            color: #9cc41e;
+            border: none;
+            margin-bottom: 1rem;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #9cc41e 0%, #8ab51a 100%);
+            color: #2b2b2b;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            display: inline-block;
+            margin-top: 1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(156, 196, 30, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(156, 196, 30, 0.6);
+            background: linear-gradient(135deg, #ff6b35 0%, #ff5520 100%);
+            color: white;
+        }
+
+        .contact-info {
+            background-color: #f9f9f9;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+            border-left: 5px solid #ff6b35;
+        }
+
+        .contact-info p {
+            font-size: 1.1rem;
+            margin: 1rem 0;
+            color: #555;
+        }
+
+        .contact-info strong {
+            color: #2b2b2b;
+        }
+
+        footer {
+            background: linear-gradient(135deg, #2b2b2b 0%, #1a1a1a 100%);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+            border-top: 4px solid #9cc41e;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        footer p:last-child {
+            color: #ff6b35;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+
+            nav a {
+                display: block;
+                margin: 0.5rem 0;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.jpg" alt="Guaynabo Garden Supply Logo" style="max-width: 300px; height: auto; margin-bottom: 1rem;">
+        <p style="font-size: 1.2rem; margin-top: 1rem;">Equipos de Jardinería | Reparación | Piezas y Accesorios</p>
+    </header>
+
+    <nav>
+        <a href="#servicios">Servicios</a>
+        <a href="#productos">Productos</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+
+    <div class="container">
+        <div class="hero">
+            <h2>Especialistas en Equipos de Jardinería</h2>
+            <p>Venta de trimmers, cortadoras de grama, y todo tipo de equipos. Servicio de reparación y piezas originales</p>
+        </div>
+
+        <section id="servicios" class="section">
+            <h2>Nuestros Servicios</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="icon">🔧</div>
+                    <h3>Reparación de Equipos</h3>
+                    <p>Servicio técnico especializado para trimmers, cortadoras de grama, sopladores y otros equipos de jardinería. Diagnóstico y reparación profesional.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">⚙️</div>
+                    <h3>Piezas Originales</h3>
+                    <p>Amplio inventario de repuestos y piezas originales para todas las marcas: cuchillas, cuerdas, filtros, carburadores y más.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">✂️</div>
+                    <h3>Trimmers</h3>
+                    <p>Venta de trimmers de gasolina y eléctricos de las mejores marcas. Modelos profesionales y para uso residencial.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">🚜</div>
+                    <h3>Cortadoras de Grama</h3>
+                    <p>Cortadoras push y autopropulsadas, a gasolina y eléctricas. Equipos duraderos para todo tipo de terreno.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">💨</div>
+                    <h3>Sopladores y Más</h3>
+                    <p>Sopladores de hojas, motosierras, bordeadoras y todo el equipo necesario para mantenimiento de jardines.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">🔍</div>
+                    <h3>Mantenimiento</h3>
+                    <p>Servicio de mantenimiento preventivo para prolongar la vida útil de tus equipos. Cambio de aceite, limpieza y ajustes.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="cta-section">
+            <h2>¿Tu Equipo Necesita Reparación?</h2>
+            <p>Traélo y nuestros técnicos lo revisarán. También tenemos equipos nuevos y piezas en stock</p>
+            <a href="#contacto" class="cta-button">Contáctanos Ahora</a>
+        </div>
+
+        <section id="productos" class="section">
+            <h2>Productos y Equipos</h2>
+            <p style="font-size: 1.1rem; color: #555; line-height: 1.8;">
+                En Guaynabo Garden Supply nos especializamos en la venta de equipos de jardinería profesionales y residenciales. Contamos con trimmers de gasolina y eléctricos, cortadoras de grama de diferentes tamaños y potencias, sopladores de hojas, motosierras, bordeadoras y mucho más. Además, mantenemos un amplio inventario de <strong>piezas y repuestos originales</strong> para todas las marcas: cuchillas, cuerdas de nylon, filtros de aire, bujías, carburadores, tanques, y cualquier pieza que necesites para mantener tu equipo funcionando perfectamente.
+            </p>
+        </section>
+
+        <section id="nosotros" class="section">
+            <h2>Sobre Nosotros</h2>
+            <p style="font-size: 1.1rem; color: #555; line-height: 1.8;">
+                Guaynabo Garden Supply es tu taller especializado en equipos de jardinería en el área de Guaynabo. Nos dedicamos a la <strong>venta de equipos nuevos</strong>, <strong>reparación técnica profesional</strong> y <strong>suministro de piezas originales</strong> para todo tipo de maquinaria de jardinería. Nuestro equipo técnico cuenta con la experiencia necesaria para diagnosticar y reparar trimmers, cortadoras de grama, sopladores y otros equipos, devolviéndolos a su óptimo funcionamiento. Ya sea que necesites comprar un equipo nuevo, reparar el que tienes, o conseguir esa pieza específica que buscas, estamos aquí para ayudarte.
+            </p>
+        </section>
+
+        <section id="contacto" class="section">
+            <h2>Contacto</h2>
+            <div class="contact-info">
+                <p><strong>📍 Dirección:</strong> Carr 169 Km 1.4 Bo Camarones, Guaynabo, PR 00969</p>
+                <p><strong>📱 Redes Sociales:</strong> Síguenos en Facebook como "Guaynabo Garden Supply"</p>
+                <p><strong>⏰ Horario:</strong> Lunes a Sábado</p>
+                <p style="margin-top: 2rem; font-style: italic; color: #666;">
+                    Traenos tu equipo para reparación o visítanos para ver nuestro inventario de equipos nuevos y piezas. ¡Estamos para servirte!
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Guaynabo Garden Supply. Todos los derechos reservados.</p>
+        <p>Equipos, Reparación y Piezas de Jardinería en Guaynabo</p>
+    </footer>
+</body>
+</html>
